@@ -1,0 +1,5 @@
+module aria2 {
+    header "aria2.h"
+    export *
+    link "aria2"
+}

@@ -1,0 +1,6 @@
+module CxxAria2 {
+    header "aria2.h"
+    header "handle.h"
+    header "helpers.h"
+    export *
+}
