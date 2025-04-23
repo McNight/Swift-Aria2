@@ -43,13 +43,13 @@ integration within URLSession like APIs.
 ```swift
 URLSession.ariaEnabled = true
 
-let url = URL(string: "https://ubuntu.com/ubuntu.iso")!
+let url = URL(string: "magnet:?xt=urn:SOMEMAGNETBITTORENTURLXYZ")!
 
 let task = URLSession.shared.downloadTask(with: url) { url, response, error in
   // here goes your usual handling
-    }
+}
 
-task.resume() // watch out, this is blocking
+task.resume() // watch out, this is blocking!
 ```
 
 ### CLI tool
@@ -57,20 +57,19 @@ task.resume() // watch out, this is blocking
 Within the package, just run:
 
 ```bash
-swift run cli download <your_preferred_linux_distrib.iso>
+swift run cli download <debian_link1.iso> <debian_link2.iso> <debian_link3.iso>
 ```
 
-to initiate a download using whatever protocol!
+to initiate an (ultra fast) download using whatever protocol!
 
 ## Installation
 
-This repo provides a precompiled `libaria2` static library.
+This repo provides a precompiled `aria2` xcframework embedding `libaria2` as a dynamic library.
 
-You need to have `git-lfs` installed to download it, otherwise feel free to 
-compile it yourself!
+You might still need some dependencies such as:
 
 ```bash
-brew install git-lfs c-ares libssh2 libzip zlib libz libexpat
+brew install c-ares libssh2 libzip zlib libz libexpat
 ```
 
 ## Other notes
